@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Tetris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Controles fuera de la terminal -->
+    <div class="external-controls">
+        <div class="controls-panel">
+            <div class="panel-title">[CONTROLES]</div>
+            <div class="control-line">← → : MOVER</div>
+            <div class="control-line">↓ : CAÍDA RÁPIDA</div>
+            <div class="control-line">↑ : ROTAR</div>
+            <div class="control-line">ESPACIO : SOLTAR</div>
+            <div class="control-line">C : GUARDAR PIEZA</div>
+            <div class="control-line">P : PAUSAR</div>
+            <div class="control-line">R : REINICIAR</div>
+        </div>
+
+        <div class="config-panel">
+            <div class="panel-title">[CONFIGURACIÓN]</div>
+            <div class="config-section-vertical">
+                <label>Piezas siguientes:</label>
+                <input type="range" id="next-pieces-count" min="1" max="7" value="1" class="slider-vertical">
+                <span id="next-count-display">1</span>
+            </div>
+            <div class="config-section-vertical">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="advanced-mode" class="checkbox"> Modo Avanzado
+                </label>
+            </div>
+            <div class="config-section-vertical">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="ghost-pieces" class="checkbox" checked> Piezas Fantasmas
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-title">TERMINAL TETRIS v1.0</div>
+            <div class="terminal-controls">
+                <span class="terminal-btn minimize">-</span>
+                <span class="terminal-btn maximize">□</span>
+                <span class="terminal-btn close">×</span>
+            </div>
+        </div>
+
+        <div class="terminal-content">
+            <div class="game-area">
+                <div class="left-panel">
+                    <div id="hold-container" class="hold-piece-container" style="display: none;">
+                        <div class="panel-title">[GUARDADA]</div>
+                        <div id="hold-piece" class="hold-piece"></div>
+                    </div>
+
+                    <div class="stats-container">
+                        <div class="panel-title">[ESTADÍSTICAS]</div>
+                        <div class="stat-line">
+                            <span>NIVEL:</span>
+                            <span id="level">1</span>
+                        </div>
+                        <div class="stat-line">
+                            <span>LÍNEAS:</span>
+                            <span id="lines">0</span>
+                        </div>
+                        <div class="stat-line">
+                            <span>PUNTOS:</span>
+                            <span id="score">0</span>
+                        </div>
+                    </div>
+
+                    <div class="game-status">
+                        <div id="game-status" class="status-message">PRESIONA 'R' PARA INICIAR</div>
+                    </div>
+                </div>
+
+                <div class="game-board-container">
+                    <div id="game-board" class="game-board"></div>
+                </div>
+
+                <div class="right-panel">
+                    <div class="next-piece-container">
+                        <div class="panel-title">[SIGUIENTES]</div>
+                        <div id="next-pieces-container" class="next-pieces-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="tetris.js"></script>
+</body>
+
+</html>
