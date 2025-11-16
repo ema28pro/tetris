@@ -70,15 +70,50 @@ body {
     outline: none;
     height: 20px;
     width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .slider-vertical::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
     background: #00ff00;
     border: none;
     height: 16px;
     width: 16px;
     border-radius: 0;
     cursor: pointer;
+}
+
+.slider-vertical::-moz-range-thumb {
+    background: #00ff00;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.slider-vertical::-moz-range-track {
+    background: #003300;
+    border: 1px solid #00ff00;
+    height: 20px;
+}
+
+.checkbox {
+    accent-color: #00ff00;
+    width: 16px;
+    height: 16px;
+}
+
+#next-count-display {
+    text-align: center;
+    font-weight: bold;
+    color: #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+    padding: 3px 6px;
+    border: 1px solid #00ff00;
+    border-radius: 2px;
 }
 
 .terminal-container {
